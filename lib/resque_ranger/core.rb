@@ -34,6 +34,11 @@ module ResqueRanger
         yield self[k]
       end
     end
+
+    def to_s
+      self.map{|q| q.name }.to_s
+    end
+
   end
 
   class Queue
