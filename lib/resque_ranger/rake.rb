@@ -27,6 +27,7 @@ module ResqueRanger::Rake
     task :purge => :"resque:setup" do 
       ResqueRanger.queues.each do |q|
         puts "Purging #{ q.name.inspect }  (#{ q.size } --> 0)"
+        q.purge
       end
     end
   end
